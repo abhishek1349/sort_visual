@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Sorting Algorithm Visualizer</h1>
+    </header>
+
+    <main class="container">
+      <section class="controls">
+        <select id="algorithm">
+          <option value="bubble">Bubble Sort</option>
+          <option value="selection">Selection Sort</option>
+          <option value="insertion">Insertion Sort</option>
+          <option value="merge">Merge Sort</option>
+          <option value="quick">Quick Sort</option>
+          <option value="heap">Heap Sort</option>
+        </select>
+
+        <button id="generateBtn">Generate New Array</button>
+        <button id="startBtn">Start Sorting</button>
+        <button id="stopBtn">Stop Sorting</button>
+
+        <label>
+          Speed:
+          <input id="speedSlider" type="range" min="20" max="500" value="150" />
+        </label>
+
+        <label>
+          Size:
+          <input id="sizeSlider" type="range" min="5" max="40" value="20" />
+        </label>
+      </section>
+
+      <section class="info">
+        <p>Algorithm: <span id="algorithmName">Bubble Sort</span></p>
+        <p>Swaps/Writes: <span id="swapCount">0</span></p>
+      </section>
+
+      <section class="main-area">
+        <section id="barsContainer" class="bars-container"></section>
+
+        <aside class="learn-panel">
+          <div class="panel-heading">
+            <h2 id="logicTitle">Bubble Sort</h2>
+            <button id="codeToggleBtn" type="button">Show Code</button>
+          </div>
+
+          <div class="panel-scroll">
+            <div id="logicContent">
+              <h3>Logic</h3>
+              <p id="logicText"></p>
+
+              <ol id="logicSteps"></ol>
+
+              <h3>Important Info</h3>
+              <p id="extraInfo"></p>
+            </div>
+
+            <pre id="cppCode" class="code-box hidden"></pre>
+          </div>
+        </aside>
+      </section>
+
+      <section id="complexityBox" class="complexity-box"></section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

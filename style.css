@@ -1,0 +1,285 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fb;
+  color: #222;
+  min-height: 100vh;
+}
+
+header {
+  padding: 16px 15px;
+  text-align: center;
+  color: white;
+  background-color: #2563eb;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+header p {
+  margin: 8px 0 0;
+}
+
+.container {
+  width: 94%;
+  max-width: 1250px;
+  margin: 14px auto;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+button,
+select {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+select {
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+button {
+  color: white;
+  background-color: #2563eb;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+label {
+  font-size: 15px;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 12px 0;
+  font-weight: bold;
+}
+
+.main-area {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.bars-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+  height: calc(100vh - 310px);
+  min-height: 300px;
+  max-height: 470px;
+  padding: 16px;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.bar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 34px;
+  color: white;
+  font-size: clamp(7px, 1vw, 12px);
+  font-weight: bold;
+  line-height: 1;
+  overflow: hidden;
+  padding-bottom: 3px;
+  border-radius: 5px 5px 0 0;
+  background-color: #3b82f6;
+  transition: height 0.2s ease, background-color 0.2s ease;
+}
+
+.bar.compare {
+  background-color: #facc15;
+  color: #111;
+}
+
+.bar.swap {
+  background-color: #ef4444;
+}
+
+.bar.sorted {
+  background-color: #22c55e;
+}
+
+.learn-panel {
+  height: calc(100vh - 310px);
+  min-height: 300px;
+  max-height: 470px;
+  padding: 14px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.panel-heading h2 {
+  margin: 0;
+  font-size: 19px;
+}
+
+#codeToggleBtn {
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+.panel-scroll {
+  height: calc(100% - 52px);
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.panel-scroll h3 {
+  margin: 14px 0 8px;
+  color: #2563eb;
+  font-size: 16px;
+}
+
+.panel-scroll p,
+.panel-scroll li {
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.panel-scroll ol {
+  padding-left: 22px;
+  margin: 0;
+}
+
+.code-box {
+  min-height: 220px;
+  max-height: 360px;
+  overflow: auto;
+  padding: 12px;
+  border-radius: 8px;
+  color: #e5e7eb;
+  background-color: #111827;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.hidden {
+  display: none;
+}
+
+.complexity-box {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.complexity-item {
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #eff6ff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.complexity-item span {
+  display: block;
+  color: #555;
+  font-size: 12px;
+}
+
+.complexity-item strong {
+  display: block;
+  margin-top: 3px;
+  color: #1d4ed8;
+}
+
+@media (max-width: 900px) {
+  header h1 {
+    font-size: 24px;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  button,
+  select,
+  label {
+    width: 100%;
+  }
+
+  .info {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .main-area {
+    grid-template-columns: 1fr;
+  }
+
+  .bars-container {
+    height: 320px;
+    gap: 3px;
+    padding: 12px;
+  }
+
+  .learn-panel {
+    height: auto;
+    max-height: none;
+  }
+
+  .panel-scroll {
+    height: auto;
+    max-height: 480px;
+  }
+
+  .bar {
+    min-width: 0;
+    font-size: 9px;
+  }
+
+  .complexity-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
